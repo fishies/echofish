@@ -13,3 +13,5 @@ func _ready():
 func _process(delta):
 	var direction = self.position.direction_to(get_viewport().get_mouse_position())
 	translate(direction * speed)
+	if direction.x * scale.x < 0:
+		scale.x *= -1
