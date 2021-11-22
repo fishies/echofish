@@ -11,7 +11,13 @@ config_version=4
 [application]
 
 config/name="Echofish"
+run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
+
+[global]
+
+resolution=false
+size=false
 
 [physics]
 
