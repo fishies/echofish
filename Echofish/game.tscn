@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/PlayerFish.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fish/PredatorFish.png" type="Texture" id=3]
 
 [node name="MainScene" type="Node2D"]
 
@@ -16,3 +17,19 @@ texture = ExtResource( 2 )
 position = Vector2( -45, -13 )
 scale = Vector2( 1.72512, 1.34111 )
 polygon = PoolVector2Array( 0, -2, 0, 34, 14, 23, 33, 36, 56, 13, 35, -11, 14, 6 )
+
+[node name="Predator" type="Area2D" parent="."]
+position = Vector2( 534, 286 )
+
+[node name="MovementBehavior" type="Node2D" parent="Predator"]
+
+[node name="Sprite" type="Sprite" parent="Predator"]
+position = Vector2( 0, 1 )
+scale = Vector2( 1.44872, 1.53614 )
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Predator"]
+position = Vector2( 2, 1 )
+polygon = PoolVector2Array( -83, -18, -74, 54, -46, 26, -16, 56, 63, 49, 84, 17, 23, -54, -46, -3 )
+
+[connection signal="area_entered" from="Predator" to="PlayerCharacter" method="_on_Predator_area_entered"]
