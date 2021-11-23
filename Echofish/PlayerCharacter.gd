@@ -43,7 +43,7 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey or event is InputEventMouseButton:
 		if event.is_pressed() and not event.is_echo():
-			if not isPinging:
+			if not isPinging and health > 0:
 				isPinging = true
 
 func _on_Predator_area_entered(area):

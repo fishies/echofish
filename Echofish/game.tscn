@@ -50,6 +50,18 @@ texture = ExtResource( 5 )
 energy = 16.0
 mode = 2
 
+[node name="VitalsDisplay" type="Node2D" parent="PlayerCharacter"]
+position = Vector2( -44, -54 )
+
+[node name="CooldownOrb" type="TextureProgress" parent="PlayerCharacter/VitalsDisplay"]
+margin_left = 75.0
+margin_top = -4.0
+margin_right = 111.0
+margin_bottom = 29.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Predator" parent="." instance=ExtResource( 4 )]
 position = Vector2( 614, 322 )
 
