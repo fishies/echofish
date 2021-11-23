@@ -34,10 +34,11 @@ func _process(delta):
 	# update health bar visual
 	
 	# move towards mouse cursor
-	var direction = self.position.direction_to(get_viewport().get_mouse_position())
-	translate(direction * speed * delta)
-	if direction.x * scale.x < 0:
-		scale.x *= -1
+	if get_viewport().get_mouse_position().distance_to(self.position) > 0.5:
+		var direction = self.position.direction_to(get_viewport().get_mouse_position())
+		translate(direction * speed * delta)
+		if direction.x * scale.x < 0:
+			scale.x *= -1
 
 func _input(event):
 	if event is InputEventKey or event is InputEventMouseButton:
