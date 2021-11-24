@@ -33,6 +33,8 @@ func _process(delta):
 		return
 	# update health bar visual
 	self.get_node("VitalsDisplay/HealthBar").value = health
+	# update cooldown orb visual
+	self.get_node("VitalsDisplay/CooldownOrb").value = self.get_node("VitalsDisplay/CooldownOrb").max_value - ((self.get_node("SonarHitbox").scale.x / maxSonarScale) * self.get_node("VitalsDisplay/CooldownOrb").max_value)
 	# move towards mouse cursor
 	if get_viewport().get_mouse_position().distance_to(self.position) > 0.5:
 		var direction = self.position.direction_to(get_viewport().get_mouse_position())
