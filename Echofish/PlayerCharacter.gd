@@ -32,7 +32,7 @@ func _process(delta):
 		survived = 0.0
 		return
 	# update health bar visual
-	
+	self.get_node("VitalsDisplay/HealthBar").value = health
 	# move towards mouse cursor
 	if get_viewport().get_mouse_position().distance_to(self.position) > 0.5:
 		var direction = self.position.direction_to(get_viewport().get_mouse_position())

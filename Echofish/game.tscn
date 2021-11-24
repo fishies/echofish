@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/PlayerFish.png" type="Texture" id=2]
 [ext_resource path="res://Food.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Predator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Particle/Particle_Sonar.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/health_bar_texture_progress.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/health_bar_texture_over.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/health_bar_texture_under.png" type="Texture" id=8]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -52,6 +55,21 @@ mode = 2
 
 [node name="VitalsDisplay" type="Node2D" parent="PlayerCharacter"]
 position = Vector2( -44, -54 )
+
+[node name="HealthBar" type="TextureProgress" parent="PlayerCharacter/VitalsDisplay"]
+margin_left = -12.0
+margin_top = 3.0
+margin_right = 244.0
+margin_bottom = 39.0
+rect_scale = Vector2( 0.5, 0.5 )
+max_value = 30.0
+value = 30.0
+texture_under = ExtResource( 8 )
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CooldownOrb" type="TextureProgress" parent="PlayerCharacter/VitalsDisplay"]
 margin_left = 75.0
