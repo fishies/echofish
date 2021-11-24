@@ -44,6 +44,7 @@ func _process(delta):
 		translate(direction * speed * delta)
 		if direction.x * scale.x < 0:
 			scale.x *= -1
+			self.get_node("VitalsDisplay").scale.x *= -1
 
 func _input(event):
 	if event is InputEventKey or event is InputEventMouseButton:
