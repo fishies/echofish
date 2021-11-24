@@ -26,6 +26,9 @@ func _process(delta):
 	# tick down health by delta
 	survived += delta
 	health -= delta
+	# cap player's health at max
+	if health > maxHealth:
+		health = maxHealth
 	# check if player is still alive
 	if health <= 0.0:
 		# pop up a UI for play again? with your survived time
@@ -60,3 +63,4 @@ func _on_Food_area_entered(area):
 	if area == self:
 		print("u eat")
 		health += 2.0
+		
