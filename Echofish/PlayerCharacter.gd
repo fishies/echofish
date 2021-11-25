@@ -24,7 +24,6 @@ func _process(delta):
 			self.get_node("SonarHitbox").scale.x = 0.0
 			self.get_node("SonarHitbox").scale.y = 0.0
 	# tick down health by delta
-	survived += delta
 	health -= delta
 	# cap player's health at max
 	if health > maxHealth:
@@ -32,8 +31,9 @@ func _process(delta):
 	# check if player is still alive
 	if health <= 0.0:
 		# pop up a UI for play again? with your survived time
-		survived = 0.0
+		#survived = 0.0
 		return
+	survived += delta
 	# update health bar visual
 	self.get_node("VitalsDisplay/HealthBar").value = health
 	# update cooldown orb visual
