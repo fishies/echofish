@@ -97,9 +97,3 @@ position = Vector2( 614, 322 )
 
 [node name="Food" parent="." instance=ExtResource( 3 )]
 position = Vector2( 260, 360 )
-
-[node name="Food2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 377, 474 )
-
-[connection signal="area_entered" from="Predator" to="PlayerCharacter" method="_on_Predator_area_entered"]
-[connection signal="area_entered" from="Food" to="PlayerCharacter" method="_on_Food_area_entered"]

@@ -51,17 +51,3 @@ func _input(event):
 		if event.is_pressed() and not event.is_echo():
 			if not isPinging and health > 0:
 				isPinging = true
-
-func _on_Predator_area_entered(area):
-	#implement death here
-	if area == self:
-		print("u ded")
-		health = 0.0
-	# death animations? particools?
-
-func _on_Food_area_entered(area):
-	#food eating behavior
-	if area == self:
-		print("u eat")
-		health += 2.0
-		
