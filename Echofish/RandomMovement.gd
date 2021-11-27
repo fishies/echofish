@@ -33,4 +33,6 @@ func _process(delta):
 	if distToMove <= 0.0: # change direction
 		distToMove = random.randfn(200.0, 50.0)
 		dirToMove = Vector2(random.randf()-0.5, random.randf()-0.5).normalized()
+		if dirToMove.x * get_parent().scale.x < 0:
+			get_parent().scale.x *= -1
 		
