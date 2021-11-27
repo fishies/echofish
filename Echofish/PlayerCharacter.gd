@@ -7,7 +7,7 @@ var health = maxHealth # time remaining to live
 var survived = 0.0
 var maxSonarScale = 10.0
 var isPinging = false
-var pingSpeed = 1.5
+var pingSpeed = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
