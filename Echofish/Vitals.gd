@@ -8,6 +8,9 @@ var survived = 0.0
 func _ready():
 	pass # Replace with function body.
 
+func resetState():
+	health = maxHealth
+	survived = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -18,8 +21,7 @@ func _process(delta):
 		health = maxHealth
 	# check if player is still alive
 	if health <= 0.0:
-		# pop up a UI for play again? with your survived time
-		#survived = 0.0
+		get_parent().get_parent().endGame()
 		return
 	survived += delta
 	# update health bar visual

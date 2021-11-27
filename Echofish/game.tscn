@@ -28,7 +28,7 @@ pause_mode = 2
 script = ExtResource( 12 )
 
 [node name="PlayerCharacter" type="Area2D" parent="."]
-pause_mode = 2
+pause_mode = 1
 position = Vector2( 169, 131 )
 z_index = 1
 script = ExtResource( 1 )
@@ -62,6 +62,7 @@ energy = 16.0
 mode = 2
 
 [node name="Vitals" type="Node2D" parent="PlayerCharacter"]
+pause_mode = 1
 light_mask = 0
 position = Vector2( 0, -50 )
 script = ExtResource( 13 )
@@ -110,9 +111,9 @@ margin_right = 265.0
 margin_bottom = 25.0
 bbcode_enabled = true
 bbcode_text = "[center][b]Time Survived:[/b]
-[/center]"
+0.000 seconds[/center]"
 text = "Time Survived:
-"
+0.000 seconds"
 scroll_active = false
 script = ExtResource( 3 )
 __meta__ = {

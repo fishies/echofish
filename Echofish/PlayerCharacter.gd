@@ -17,9 +17,7 @@ func _process(delta):
 		self.get_node("SonarHitbox").scale.x += delta * pingSpeed
 		self.get_node("SonarHitbox").scale.y += delta * pingSpeed
 		if self.get_node("SonarHitbox").scale.x > maxSonarScale:
-			isPinging = false
-			self.get_node("SonarHitbox").scale.x = 0.0
-			self.get_node("SonarHitbox").scale.y = 0.0
+			resetSonar()
 	# move towards mouse cursor
 	if get_viewport().get_mouse_position().distance_to(self.position) > 0.5:
 		var direction = self.position.direction_to(get_viewport().get_mouse_position())
@@ -27,6 +25,11 @@ func _process(delta):
 		if direction.x * scale.x < 0:
 			scale.x *= -1
 			self.get_node("Vitals").scale.x *= -1
+
+func resetSonar():
+	isPinging = false
+	self.get_node("SonarHitbox").scale.x = 0.0
+	self.get_node("SonarHitbox").scale.y = 0.0
 
 func _input(event):
 	if event is InputEventKey or event is InputEventMouseButton:

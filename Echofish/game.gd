@@ -8,15 +8,25 @@ const maxYBound = 600;
 
 var random = RandomNumberGenerator.new()
 
+#var formatString = "[center][b]Time Survived:[/b]\n %.3f seconds[/center]"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	random.randomize()
-	#get_tree().paused = true
+	endGame()
 
 func startGame():
 	while get_tree().get_nodes_in_group("FoodList").size() < maxSpawns:
 		spawnFood()
 	get_tree().paused = false
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_node("PlayerCharacter/Vitals").resetState()
+	get_node("PlayerCharacter").resetSonar()
+	get_node("PlayerCharacter").isPinging = true
+	
+func endGame():
+	get_tree().paused = true
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -27,6 +37,13 @@ func spawnFood():
 	add_child(newFood)
 	newFood.add_to_group("FoodList")
 	newFood.set_position(Vector2(random.randi() % maxXBound, random.randi() % maxYBound))
+
+func _input(event):
+	#restart game upon receiving input
+	if get_tree().paused:
+		if event is InputEventKey or event is InputEventMouseButton:
+			if event.is_pressed() and not event.is_echo():
+				startGame()
 
 func _on_SpawnTimer_timeout():
 	if random.randf() < spawnChance:
