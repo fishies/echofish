@@ -23,9 +23,11 @@ orbit_velocity_random = 0.0
 radius = 150.0
 
 [node name="MainScene" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 12 )
 
 [node name="PlayerCharacter" type="Area2D" parent="."]
+pause_mode = 2
 position = Vector2( 169, 131 )
 z_index = 1
 script = ExtResource( 1 )
@@ -116,9 +118,10 @@ __meta__ = {
 }
 
 [node name="Predator" parent="." instance=ExtResource( 4 )]
-position = Vector2( 519, 27 )
+position = Vector2( 524, 328 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
+pause_mode = 1
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

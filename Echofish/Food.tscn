@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Fish/Fish_PreyMackerelSil.png" type="Texture" id=4]
 
 [node name="Food" type="Area2D"]
+pause_mode = 1
 position = Vector2( 386, 286 )
 script = ExtResource( 2 )
 
