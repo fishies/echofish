@@ -14,7 +14,7 @@ func _ready():
 
 func _on_Food_area_entered(area):
 	if area.name == "PlayerCharacter":
-		if area.health > 0.0:
+		if area.get_node("Vitals").health > 0.0:
 			print("u eat")
-			area.health += 2.0
+			area.get_node("Vitals").health += 2.0
 			queue_free()

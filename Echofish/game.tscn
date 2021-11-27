@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/Fish_Player.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/UI/cooldown_orb_progress.png" type="Texture" id=10]
 [ext_resource path="res://Assets/UI/cooldown_orb_over.png" type="Texture" id=11]
 [ext_resource path="res://game.gd" type="Script" id=12]
+[ext_resource path="res://Vitals.gd" type="Script" id=13]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -60,11 +61,12 @@ texture = ExtResource( 5 )
 energy = 16.0
 mode = 2
 
-[node name="VitalsDisplay" type="Node2D" parent="PlayerCharacter"]
+[node name="Vitals" type="Node2D" parent="PlayerCharacter"]
 light_mask = 0
 position = Vector2( 0, -50 )
+script = ExtResource( 13 )
 
-[node name="HealthBar" type="TextureProgress" parent="PlayerCharacter/VitalsDisplay"]
+[node name="HealthBar" type="TextureProgress" parent="PlayerCharacter/Vitals"]
 light_mask = 0
 margin_left = -39.0
 margin_top = 10.0
@@ -79,7 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CooldownOrb" type="TextureProgress" parent="PlayerCharacter/VitalsDisplay"]
+[node name="CooldownOrb" type="TextureProgress" parent="PlayerCharacter/Vitals"]
 light_mask = 0
 margin_left = -38.0
 margin_top = 8.0

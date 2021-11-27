@@ -9,4 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	bbcode_text = formatString % get_parent().get_parent().survived
+	bbcode_text = formatString % get_parent().get_parent().get_node("Vitals").survived
