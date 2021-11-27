@@ -2,9 +2,9 @@ extends Area2D
 
 # Declare member variables here.
 var speed = 100.0
-var maxSonarScale = 10.0
+var maxSonarScale = 6.0
 var isPinging = false
-var pingSpeed = 1.0
+var pingSpeed = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
