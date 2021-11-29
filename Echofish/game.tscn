@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/Fish_Player.png" type="Texture" id=2]
@@ -17,12 +17,18 @@
 [ext_resource path="res://EnvironmentSound.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Sound/Sound_Crunch2.wav" type="AudioStream" id=16]
 [ext_resource path="res://Assets/Sound/Sound_Sonar.wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/Particle/Particle_BubbleWhtL.png" type="Texture" id=18]
 
 [sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 0.15
 flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
+spread = 60.0
+gravity = Vector3( 0, -60, 0 )
+initial_velocity = 9.8
+initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+color = Color( 0.501961, 0.768627, 1, 1 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 160.0
@@ -45,12 +51,14 @@ position = Vector2( -45, -13 )
 scale = Vector2( 1.72512, 1.34111 )
 polygon = PoolVector2Array( 2.31868, 0.745651, 5.7967, 9.69347, 1.73901, 17.8956, 11.0137, 17.8956, 14.4917, 14.913, 20.2884, 14.913, 17.9698, 23.1152, 27.8242, 16.4043, 35.3599, 20.1326, 49.8516, 20.8782, 55.6483, 12.6761, 39.4175, -1.4913, 30.7225, -2.23695, 19.1291, 3.72826, 15.0714, 8.20216, 6.37637, 0.745651 )
 
-[node name="EarnPointsParticles" type="Particles2D" parent="PlayerCharacter"]
-emitting = false
-lifetime = 3.0
-one_shot = true
-explosiveness = 1.0
+[node name="BlowBubbles" type="Particles2D" parent="PlayerCharacter"]
+position = Vector2( 40, 10 )
+lifetime = 2.5
+explosiveness = 0.15
+randomness = 0.5
+local_coords = false
 process_material = SubResource( 1 )
+texture = ExtResource( 18 )
 
 [node name="SonarHitbox" type="Area2D" parent="PlayerCharacter"]
 scale = Vector2( 1e-05, 1e-05 )
