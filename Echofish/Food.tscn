@@ -17,7 +17,7 @@ script = ExtResource( 3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -31, -7, -30, 18, -17, 10, 2, 19, 20, 18, 32, 5, 7, -20, -19, -1 )
+polygon = PoolVector2Array( -17, -11, -18, 12, -8, 8, 2, 12, 15, 7, 16, -3, 2, -12, -7, -7 )
 
 [node name="FoodDetection" type="Area2D" parent="."]
 

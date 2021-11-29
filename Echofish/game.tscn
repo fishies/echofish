@@ -41,7 +41,7 @@ texture = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlayerCharacter"]
 position = Vector2( -45, -13 )
 scale = Vector2( 1.72512, 1.34111 )
-polygon = PoolVector2Array( 0, -2, 0, 34, 14, 23, 33, 36, 56, 13, 35, -11, 14, 6 )
+polygon = PoolVector2Array( 2.31868, 0.745651, 5.7967, 9.69347, 1.73901, 17.8956, 11.0137, 17.8956, 14.4917, 14.913, 20.2884, 14.913, 17.9698, 23.1152, 27.8242, 16.4043, 35.3599, 20.1326, 49.8516, 20.8782, 55.6483, 12.6761, 39.4175, -1.4913, 30.7225, -2.23695, 19.1291, 3.72826, 15.0714, 8.20216, 6.37637, 0.745651 )
 
 [node name="EarnPointsParticles" type="Particles2D" parent="PlayerCharacter"]
 emitting = false
