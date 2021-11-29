@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/Fish_Player.png" type="Texture" id=2]
@@ -30,6 +30,17 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.501961, 0.768627, 1, 1 )
 
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.15
+flag_disable_z = true
+spread = 60.0
+gravity = Vector3( 0, -60, 0 )
+initial_velocity = 9.8
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 1, 0.235294, 0, 1 )
+
 [sub_resource type="CircleShape2D" id=2]
 radius = 160.0
 
@@ -59,6 +70,16 @@ explosiveness = 0.15
 randomness = 0.5
 local_coords = false
 process_material = SubResource( 1 )
+texture = ExtResource( 18 )
+
+[node name="Bubble_Death" type="Particles2D" parent="PlayerCharacter"]
+position = Vector2( 10, 0 )
+emitting = false
+one_shot = true
+explosiveness = 0.15
+randomness = 0.5
+local_coords = false
+process_material = SubResource( 3 )
 texture = ExtResource( 18 )
 
 [node name="SonarHitbox" type="Area2D" parent="PlayerCharacter"]

@@ -17,6 +17,7 @@ func _on_Food_area_entered(area):
 			#print("u eat")
 			area.get_node("EatSound").play()
 			area.get_node("Vitals").health += 2.0
+			area.get_node("Bubble_Death").emitting = true
 			queue_free()
 	if area.name == "SonarHitbox":
 		get_node("Light2D").energy = 16.0
