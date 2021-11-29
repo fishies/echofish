@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sound_Sonar.wav-4e5c045ddf70105adffbbe84f297c10a.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Sound_Sonar.wav"
+dest_files=[ "res://.import/Sound_Sonar.wav-4e5c045ddf70105adffbbe84f297c10a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

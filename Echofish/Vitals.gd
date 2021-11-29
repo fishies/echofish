@@ -27,4 +27,7 @@ func _process(delta):
 	# update health bar visual
 	self.get_node("HealthBar").value = health
 	# update cooldown orb visual
-	self.get_node("CooldownOrb").value = self.get_node("CooldownOrb").max_value - ((get_parent().get_node("SonarHitbox").scale.x / get_parent().maxSonarScale) * self.get_node("CooldownOrb").max_value)
+	if get_parent().isPinging:
+		self.get_node("CooldownOrb").value = ((get_parent().get_node("SonarHitbox").scale.x / get_parent().maxSonarScale) * self.get_node("CooldownOrb").max_value)
+	else:
+		self.get_node("CooldownOrb").value = self.get_node("CooldownOrb").max_value
