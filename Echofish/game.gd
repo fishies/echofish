@@ -1,8 +1,9 @@
 extends Node2D
 
 var foodScene = load("res://Food.tscn")
+var anglerScene = load("res://Predator.tscn")
 var spawnChance = 0.6; # chance to spawn per "spawn tick" (timer node)
-var maxSpawns = 3;
+var maxSpawns = 8;
 const maxXBound = 1024;
 const maxYBound = 600;
 
@@ -27,6 +28,9 @@ func startGame():
 	get_node("PlayerCharacter").position = Vector2(160.0,128.0)
 	get_node("Predator").position = Vector2(512.0,320.0)
 	get_node("Predator/Light2D").energy = 0.0
+	for angler in get_tree().get_nodes_in_group("NewAnglers"):
+		angler.queue_free()
+	get_node("AnglerEnrage").start()
 	
 func endGame():
 	get_tree().paused = true
@@ -57,3 +61,11 @@ func _on_SpawnTimer_timeout():
 	if random.randf() < spawnChance:
 		if get_tree().get_nodes_in_group("FoodList").size() < maxSpawns:
 			spawnFood()
+
+func _on_AnglerEnrage_timeout():
+	var newAngler = anglerScene.instance()
+	add_child(newAngler)
+	newAngler.add_to_group("NewAnglers")
+	newAngler.set_position(get_node("Predator").position)
+	newAngler.scale.x = get_node("Predator").scale.x
+	newAngler.get_node("Light2D").energy = 8.0
