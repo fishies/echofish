@@ -3,7 +3,7 @@ extends Node2D
 var foodScene = load("res://Food.tscn")
 var anglerScene = load("res://Predator.tscn")
 var spawnChance = 0.6; # chance to spawn per "spawn tick" (timer node)
-var maxSpawns = 8;
+var maxSpawns = 9;
 const maxXBound = 1024;
 const maxYBound = 600;
 
