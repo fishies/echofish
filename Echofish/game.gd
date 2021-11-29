@@ -24,6 +24,8 @@ func startGame():
 	get_node("PlayerCharacter").resetSonar()
 	get_node("PlayerCharacter").isPinging = true
 	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = false
+	get_node("PlayerCharacter").position = Vector2(160.0,128.0)
+	get_node("Predator").position = Vector2(512.0,320.0)
 	
 func endGame():
 	get_tree().paused = true

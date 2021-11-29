@@ -29,7 +29,7 @@ script = ExtResource( 12 )
 
 [node name="PlayerCharacter" type="Area2D" parent="."]
 pause_mode = 1
-position = Vector2( 169, 131 )
+position = Vector2( 160, 128 )
 z_index = 1
 script = ExtResource( 1 )
 
@@ -132,7 +132,7 @@ __meta__ = {
 }
 
 [node name="Predator" parent="." instance=ExtResource( 4 )]
-position = Vector2( 524, 328 )
+position = Vector2( 512, 320 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 pause_mode = 1
