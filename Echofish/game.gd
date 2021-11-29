@@ -23,9 +23,11 @@ func startGame():
 	get_node("PlayerCharacter/Vitals").resetState()
 	get_node("PlayerCharacter").resetSonar()
 	get_node("PlayerCharacter").isPinging = true
+	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = false
 	
 func endGame():
 	get_tree().paused = true
+	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = true
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

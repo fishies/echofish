@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var formatString = "[center][b]Time Survived:[/b]\n %.3f seconds[/center]"
+var formatString = "[center][b]Time Survived:[/b]\n%.3f seconds[/center]"
 
 
 # Called when the node enters the scene tree for the first time.
