@@ -22,7 +22,7 @@ func startGame():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_node("PlayerCharacter/Vitals").resetState()
 	get_node("PlayerCharacter").resetSonar()
-	get_node("PlayerCharacter").isPinging = true
+	get_node("PlayerCharacter").startSonar()
 	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = false
 	get_node("PlayerCharacter").position = Vector2(160.0,128.0)
 	get_node("Predator").position = Vector2(512.0,320.0)

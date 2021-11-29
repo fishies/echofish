@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/Fish_Player.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Vitals.gd" type="Script" id=13]
 [ext_resource path="res://Assets/Sound/Sound_WhiteNoise.wav" type="AudioStream" id=14]
 [ext_resource path="res://EnvironmentSound.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Sound/Sound_Crunch2.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Sound/Sound_Sonar.wav" type="AudioStream" id=17]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -132,6 +134,12 @@ text = "Press Any Button to Start New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EatSound" type="AudioStreamPlayer" parent="PlayerCharacter"]
+stream = ExtResource( 16 )
+
+[node name="SonarSound" type="AudioStreamPlayer" parent="PlayerCharacter"]
+stream = ExtResource( 17 )
 
 [node name="Predator" parent="." instance=ExtResource( 4 )]
 position = Vector2( 512, 320 )

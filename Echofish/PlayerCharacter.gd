@@ -31,8 +31,12 @@ func resetSonar():
 	self.get_node("SonarHitbox").scale.x = 0.0
 	self.get_node("SonarHitbox").scale.y = 0.0
 
+func startSonar():
+	isPinging = true
+	get_node("SonarSound").play()
+
 func _input(event):
 	if event is InputEventKey or event is InputEventMouseButton:
 		if event.is_pressed() and not event.is_echo():
 			if not isPinging and self.get_node("Vitals").health > 0:
-				isPinging = true
+				startSonar()
