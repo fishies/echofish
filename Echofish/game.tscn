@@ -64,7 +64,7 @@ polygon = PoolVector2Array( 2.31868, 0.745651, 5.7967, 9.69347, 1.73901, 17.8956
 
 [node name="BlowBubbles" type="Particles2D" parent="PlayerCharacter"]
 position = Vector2( 40, 10 )
-amount = 2
+amount = 4
 lifetime = 2.5
 explosiveness = 0.15
 randomness = 0.5
