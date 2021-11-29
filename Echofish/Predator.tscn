@@ -32,14 +32,13 @@ polygon = PoolVector2Array( 9.33334, -18.3333, 6.66669, -32.3333, 48, 11.6667, 5
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-enabled = false
 texture = ExtResource( 4 )
-color = Color( 1, 0, 0, 1 )
-energy = 16.0
-mode = 1
+color = Color( 1, 0.501961, 0, 1 )
+energy = 0.0
 
 [node name="Sprite2" type="Sprite" parent="."]
 light_mask = 0
 texture = ExtResource( 5 )
 
 [connection signal="area_entered" from="." to="." method="_on_Predator_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Predator_area_exited"]

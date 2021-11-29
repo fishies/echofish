@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fish/Fish_PreyMackerel.png" type="Texture" id=1]
 [ext_resource path="res://Food.gd" type="Script" id=2]
 [ext_resource path="res://RandomMovement.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Fish/Fish_PreyMackerelSil.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fish/Fish_PreyMackerelShadow.png" type="Texture" id=5]
 
 [node name="Food" type="Area2D"]
 pause_mode = 1
@@ -24,6 +25,11 @@ polygon = PoolVector2Array( -17, -11, -18, 12, -8, 8, 2, 12, 15, 7, 16, -3, 2, -
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FoodDetection"]
 position = Vector2( 0, -8 )
 polygon = PoolVector2Array( 1, 15, 67, 67, 67, -64 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+color = Color( 0, 0.501961, 1, 1 )
+energy = 0.0
 
 [node name="Sprite2" type="Sprite" parent="."]
 light_mask = 0
