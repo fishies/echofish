@@ -154,6 +154,10 @@ position = Vector2( 512, 320 )
 pause_mode = 1
 autostart = true
 
+[node name="AnglerEnrage" type="Timer" parent="."]
+pause_mode = 1
+wait_time = 60.0
+
 [node name="EnvironmentSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 14 )
@@ -161,4 +165,5 @@ autoplay = true
 script = ExtResource( 15 )
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="AnglerEnrage" to="." method="_on_AnglerEnrage_timeout"]
 [connection signal="finished" from="EnvironmentSound" to="EnvironmentSound" method="_on_EnvironmentSound_finished"]
