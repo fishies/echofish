@@ -41,4 +41,3 @@ light_mask = 0
 texture = ExtResource( 5 )
 
 [connection signal="area_entered" from="." to="." method="_on_Predator_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_Predator_area_exited"]
