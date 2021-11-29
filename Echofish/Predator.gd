@@ -10,6 +10,6 @@ func _ready():
 
 func _on_Predator_area_entered(area):
 	if area.name == "PlayerCharacter":
-		print("u ded")
+		#print("u ded")
 		area.get_node("Vitals").health = 0.0
 	# death animations? particools?
