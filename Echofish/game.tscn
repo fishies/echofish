@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fish/Fish_Player.png" type="Texture" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Assets/UI/cooldown_orb_over.png" type="Texture" id=11]
 [ext_resource path="res://game.gd" type="Script" id=12]
 [ext_resource path="res://Vitals.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Sound/Sound_WhiteNoise.wav" type="AudioStream" id=14]
+[ext_resource path="res://EnvironmentSound.gd" type="Script" id=15]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -138,4 +140,11 @@ position = Vector2( 512, 320 )
 pause_mode = 1
 autostart = true
 
+[node name="EnvironmentSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 14 )
+autoplay = true
+script = ExtResource( 15 )
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="finished" from="EnvironmentSound" to="EnvironmentSound" method="_on_EnvironmentSound_finished"]
