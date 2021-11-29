@@ -26,10 +26,14 @@ func startGame():
 	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = false
 	get_node("PlayerCharacter").position = Vector2(160.0,128.0)
 	get_node("Predator").position = Vector2(512.0,320.0)
+	get_node("Predator/Light2D").energy = 0.0
 	
 func endGame():
 	get_tree().paused = true
 	get_node("PlayerCharacter/FixedDisplay/PlayPrompt").visible = true
+	get_node("Predator/Light2D").energy = 16.0
+	for fish in get_tree().get_nodes_in_group("FoodList"):
+		fish.get_node("Light2D").energy = 16.0
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
